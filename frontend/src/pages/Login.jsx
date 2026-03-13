@@ -51,12 +51,19 @@ const Login = () => {
   },[token])
 
   return (
-    <div className='min-h-[70vh] flex items-center justify-center pt-8'>
-      <form onSubmit={onSubmitHandler} className='ios-card-elevated p-8 sm:p-10 w-full max-w-md animate-scale-in'>
+    <div className='min-h-[80vh] flex items-center justify-center pt-12 px-4'>
+      
+      {/* Ambient background glow */}
+      <div className='fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-tr from-ios-blue/10 to-ios-purple/20 blur-[150px] rounded-full -z-10 pointer-events-none'></div>
+
+      <form onSubmit={onSubmitHandler} className='glass-heavy border border-white/10 p-10 sm:p-14 w-full max-w-md rounded-[2.5rem] shadow-ios-xl relative overflow-hidden isolate'>
           
-          <h2 className='ios-large-title text-center text-ios-text-primary mb-2'>{currentState}</h2>
-          <p className='ios-subheadline text-center mb-8'>
-            {currentState === 'Login' ? 'Welcome back to Clothify' : 'Create your Clothify account'}
+          {/* Inner ambient glow for form */}
+          <div className='absolute -top-32 -right-32 w-64 h-64 bg-ios-blue/20 blur-[80px] rounded-full -z-10'></div>
+
+          <h2 className='text-3xl sm:text-4xl font-black text-white mb-2 tracking-tight text-center'>{currentState}</h2>
+          <p className='text-[15px] sm:text-[16px] text-ios-text-secondary font-light text-center mb-10'>
+            {currentState === 'Login' ? 'Welcome back to Clothify' : 'Join the Clothify society'}
           </p>
 
           <div className='flex flex-col gap-4'>

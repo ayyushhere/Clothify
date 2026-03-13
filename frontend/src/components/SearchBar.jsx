@@ -19,9 +19,9 @@ const SearchBar = () => {
   }, [location])
 
   return showSearch && visible ? (
-    <div className='bg-white/80 backdrop-blur-lg border-b border-ios-separator-light py-3 px-4 animate-slide-down'>
+    <div className='bg-ios-secondary-bg/80 backdrop-blur-lg border-b border-ios-separator-light py-3 px-4 animate-slide-down'>
       <div className='max-w-xl mx-auto flex items-center gap-3'>
-        <div className='flex-1 flex items-center gap-3 bg-ios-fill/60 px-4 py-2.5 rounded-ios-sm transition-all focus-within:ring-2 focus-within:ring-ios-blue/20 focus-within:bg-white focus-within:shadow-ios-sm'>
+        <div className='flex-1 flex items-center gap-3 bg-ios-fill/60 px-4 py-2.5 rounded-ios-sm transition-all focus-within:ring-2 focus-within:ring-ios-blue/20 focus-within:bg-ios-tertiary-bg focus-within:shadow-ios-sm'>
           <img className='w-4 opacity-40' src={assets.search_icon} alt="" />
           <input
             value={search}

@@ -83,11 +83,14 @@ const Collection = () => {
   },[sortType])
 
   return (
-    <div className='flex flex-col sm:flex-row gap-6 pt-8'>
+    <div className='flex flex-col sm:flex-row gap-6 pt-12 px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw] relative'>
       
+      {/* Background Ambience */}
+      <div className='absolute top-20 left-10 w-64 h-64 bg-ios-blue/5 blur-[100px] rounded-full -z-10 pointer-events-none'></div>
+
       {/* Filter Options */}
-      <div className='min-w-60'>
-        <button onClick={()=>setShowFilter(!showFilter)} className='flex items-center gap-2 mb-4 sm:mb-6 ios-headline text-ios-text-primary'>
+      <div className='min-w-64 sm:sticky sm:top-28 h-fit'>
+        <button onClick={()=>setShowFilter(!showFilter)} className='flex items-center gap-2 mb-6 sm:mb-8 text-xl font-bold text-white tracking-tight hover:text-ios-blue transition-colors'>
           Filters
           <img className={`h-3 sm:hidden transition-transform duration-200 ${showFilter ? 'rotate-90' : ''}`} src={assets.dropdown_icon} alt="" />
         </button>

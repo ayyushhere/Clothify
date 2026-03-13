@@ -3,32 +3,34 @@ import { assets } from '../assets/assets'
 
 const OurPolicy = () => {
   return (
-    <div className='grid grid-cols-1 sm:grid-cols-3 gap-4 py-12'>
-      
-      <div className='ios-card-glass p-6 text-center hover:shadow-ios-lg hover:-translate-y-1 transition-all duration-300'>
-        <div className='w-14 h-14 glass-tinted rounded-full flex items-center justify-center mx-auto mb-4'>
-          <img src={assets.exchange_icon} className='w-7 opacity-80' alt="" />
+    <div className='px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw] py-20'>
+      <div className='grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8'>
+        
+        <div className='glass-heavy border border-white/10 p-8 text-center rounded-3xl hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(255,255,255,0.05)] hover:border-white/20 transition-all duration-500 group'>
+          <div className='w-16 h-16 bg-white/5 border border-white/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:bg-ios-blue/10 group-hover:border-ios-blue/30 transition-all duration-500'>
+            <img src={assets.exchange_icon} className='w-8 invert opacity-80 group-hover:opacity-100 transition-opacity' alt="" />
+          </div>
+          <p className='text-xl font-bold text-white mb-2 tracking-tight'>Easy Exchange</p>
+          <p className='text-[15px] text-ios-text-secondary leading-relaxed font-light'>Hassle-free exchange policy tailored for your utmost convenience.</p>
         </div>
-        <p className='ios-headline text-ios-text-primary mb-1'>Easy Exchange</p>
-        <p className='ios-footnote'>Hassle-free exchange policy for your convenience</p>
-      </div>
 
-      <div className='ios-card-glass p-6 text-center hover:shadow-ios-lg hover:-translate-y-1 transition-all duration-300'>
-        <div className='w-14 h-14 bg-ios-green/8 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-4 border border-ios-green/10'>
-          <img src={assets.quality_icon} className='w-7 opacity-80' alt="" />
+        <div className='glass-heavy border border-white/10 p-8 text-center rounded-3xl hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(255,255,255,0.05)] hover:border-white/20 transition-all duration-500 group'>
+          <div className='w-16 h-16 bg-white/5 border border-white/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:bg-ios-green/10 group-hover:border-ios-green/30 transition-all duration-500'>
+            <img src={assets.quality_icon} className='w-8 invert opacity-80 group-hover:opacity-100 transition-opacity' alt="" />
+          </div>
+          <p className='text-xl font-bold text-white mb-2 tracking-tight'>7-Day Returns</p>
+          <p className='text-[15px] text-ios-text-secondary leading-relaxed font-light'>Complimentary return policy within 7 days of your premium purchase.</p>
         </div>
-        <p className='ios-headline text-ios-text-primary mb-1'>7-Day Returns</p>
-        <p className='ios-footnote'>Free return policy within 7 days of purchase</p>
-      </div>
 
-      <div className='ios-card-glass p-6 text-center hover:shadow-ios-lg hover:-translate-y-1 transition-all duration-300'>
-        <div className='w-14 h-14 bg-ios-purple/8 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-4 border border-ios-purple/10'>
-          <img src={assets.support_img} className='w-7 opacity-80' alt="" />
+        <div className='glass-heavy border border-white/10 p-8 text-center rounded-3xl hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(255,255,255,0.05)] hover:border-white/20 transition-all duration-500 group'>
+          <div className='w-16 h-16 bg-white/5 border border-white/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:bg-ios-purple/10 group-hover:border-ios-purple/30 transition-all duration-500'>
+            <img src={assets.support_img} className='w-8 invert opacity-80 group-hover:opacity-100 transition-opacity' alt="" />
+          </div>
+          <p className='text-xl font-bold text-white mb-2 tracking-tight'>24/7 Concierge</p>
+          <p className='text-[15px] text-ios-text-secondary leading-relaxed font-light'>Best-in-class, dedicated white-glove support around the clock.</p>
         </div>
-        <p className='ios-headline text-ios-text-primary mb-1'>24/7 Support</p>
-        <p className='ios-footnote'>Best-in-class customer support around the clock</p>
-      </div>
 
+      </div>
     </div>
   )
 }

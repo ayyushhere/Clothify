@@ -25,23 +25,28 @@ const Login = ({ setToken }) => {
     }
 
     return (
-        <div className='min-h-screen ios-gradient-bg flex items-center justify-center px-4'>
-            <div className='ios-card-elevated p-8 sm:p-10 max-w-md w-full animate-scale-in'>
-                <div className='mb-8 text-center'>
-                    <h1 className='ios-large-title text-ios-text-primary mb-1'>Clothify</h1>
-                    <span className='text-[12px] font-medium text-ios-text-tertiary bg-ios-fill px-3 py-1 rounded-ios-full inline-block'>Admin Panel</span>
+        <div className='min-h-screen bg-[#0a0a0c] flex items-center justify-center px-4 relative isolate'>
+            
+            {/* Ambient glows */}
+            <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-tr from-ios-blue/10 to-ios-purple/10 blur-[150px] rounded-full -z-10 pointer-events-none'></div>
+
+            <div className='glass-heavy p-10 sm:p-14 rounded-[3rem] w-[90%] max-w-lg border border-white/10 shadow-ios-xl relative overflow-hidden animate-scale-in'>
+                
+                <div className='mb-10 text-center relative z-10'>
+                    <h1 className='text-4xl sm:text-5xl font-black mb-2 tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-ios-blue to-ios-purple'>Clothify</h1>
+                    <span className='px-4 py-1.5 rounded-full bg-white/10 text-white text-xs font-semibold tracking-wide uppercase border border-white/5'>Admin Portal</span>
                 </div>
-                <form onSubmit={onSubmitHandler}>
-                    <div className='mb-4'>
-                        <p className='ios-caption mb-2 font-medium'>Email Address</p>
-                        <input onChange={(e) => setEmail(e.target.value)} value={email} className='ios-input' type="email" placeholder='admin@lumiere.com' required />
-                    </div>
+
+                <form onSubmit={onSubmitHandler} className='relative z-10'>
                     <div className='mb-6'>
-                        <p className='ios-caption mb-2 font-medium'>Password</p>
-                        <input onChange={(e) => setPassword(e.target.value)} value={password} className='ios-input' type="password" placeholder='Enter your password' required />
+                        <input onChange={(e) => setEmail(e.target.value)} value={email} className='w-full px-6 py-4 bg-black/40 backdrop-blur-xl border border-white/10 rounded-2xl text-white outline-none focus:border-ios-blue transition-all duration-300' type="email" placeholder='Email Address' required />
                     </div>
-                    <button className='ios-btn-primary w-full' type="submit">Sign In</button>
+                    <div className='mb-8'>
+                        <input onChange={(e) => setPassword(e.target.value)} value={password} className='w-full px-6 py-4 bg-black/40 backdrop-blur-xl border border-white/10 rounded-2xl text-white outline-none focus:border-ios-purple transition-all duration-300' type="password" placeholder='Password' required />
+                    </div>
+                    <button className='w-full bg-gradient-to-r from-ios-blue to-ios-purple text-white font-bold text-[16px] py-4 rounded-2xl hover:shadow-[0_0_30px_rgba(191,90,242,0.4)] transition-all duration-300 hover:-translate-y-1' type="submit">Access Secure Panel</button>
                 </form>
+
             </div>
         </div>
     )

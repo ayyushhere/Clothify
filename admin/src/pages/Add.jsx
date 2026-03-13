@@ -61,15 +61,15 @@ const Add = ({ token }) => {
   }
 
   return (
-    <div className='animate-fade-in'>
-      <h2 className='ios-title text-ios-text-primary mb-6'>Add New Item</h2>
+    <div className='animate-fade-in pb-10'>
+      <h2 className='text-3xl font-black text-white tracking-tight mb-8'>Add New Product</h2>
 
-      <form onSubmit={onSubmitHandler} className='flex flex-col gap-5 max-w-2xl'>
+      <form onSubmit={onSubmitHandler} className='flex flex-col gap-6 max-w-3xl'>
 
         {/* Image Upload */}
-        <div className='ios-card-glass p-5'>
-          <p className='ios-caption font-medium mb-3 uppercase tracking-wider'>Product Images</p>
-          <div className='flex gap-3'>
+        <div className='glass-heavy p-6 shadow-ios-lg border border-white/10 rounded-[24px]'>
+          <p className='text-[13px] font-bold text-ios-text-tertiary mb-4 uppercase tracking-widest'>Product Imagery</p>
+          <div className='flex flex-wrap gap-4'>
             {[
               { state: image1, setter: setImage1, id: 'image1' },
               { state: image2, setter: setImage2, id: 'image2' },
@@ -77,8 +77,8 @@ const Add = ({ token }) => {
               { state: image4, setter: setImage4, id: 'image4' },
             ].map(({ state, setter, id }) => (
               <label key={id} htmlFor={id} className='cursor-pointer group'>
-                <div className='w-20 h-20 rounded-ios-sm overflow-hidden border-2 border-dashed border-ios-separator hover:border-ios-blue transition-colors'>
-                  <img className='w-full h-full object-cover group-hover:opacity-75 transition-opacity' src={!state ? assets.upload_area : URL.createObjectURL(state)} alt="" />
+                <div className={`w-24 h-28 rounded-xl overflow-hidden border-2 border-dashed transition-all duration-300 flex items-center justify-center ${state ? 'border-ios-blue shadow-[0_0_15px_rgba(10,132,255,0.2)]' : 'border-white/20 bg-black/40 hover:border-ios-blue hover:bg-ios-blue/5'}`}>
+                  <img className={`object-cover transition-all duration-300 ${state ? 'w-full h-full' : 'w-8 h-8 opacity-40 group-hover:opacity-100 group-hover:scale-110 filter invert'}`} src={!state ? assets.upload_area : URL.createObjectURL(state)} alt="" />
                 </div>
                 <input onChange={(e) => setter(e.target.files[0])} type="file" id={id} hidden />
               </label>
@@ -87,54 +87,57 @@ const Add = ({ token }) => {
         </div>
 
         {/* Product Details */}
-        <div className='ios-card-glass p-5 flex flex-col gap-4'>
+        <div className='glass-heavy p-6 shadow-ios-lg border border-white/10 rounded-[24px] flex flex-col gap-5'>
           <div>
-            <p className='ios-caption font-medium mb-2 uppercase tracking-wider'>Product Name</p>
-            <input onChange={(e) => setName(e.target.value)} value={name} className='ios-input max-w-lg' type="text" placeholder='e.g. Classic Cotton Tee' required />
+            <p className='text-[13px] font-bold text-ios-text-tertiary mb-3 uppercase tracking-widest'>Product Name</p>
+            <input onChange={(e) => setName(e.target.value)} value={name} className='ios-input' type="text" placeholder='e.g. Classic Obsidian Hoodie' required />
           </div>
 
           <div>
-            <p className='ios-caption font-medium mb-2 uppercase tracking-wider'>Description</p>
-            <textarea onChange={(e) => setDescription(e.target.value)} value={description} className='ios-input max-w-lg' placeholder='Write a description...' required />
+            <p className='text-[13px] font-bold text-ios-text-tertiary mb-3 uppercase tracking-widest'>Description</p>
+            <textarea onChange={(e) => setDescription(e.target.value)} value={description} className='ios-input' placeholder='Write a compelling product description...' required />
           </div>
         </div>
 
         {/* Category, Sub-Category, Price */}
-        <div className='ios-card-glass p-5'>
-          <div className='flex flex-col sm:flex-row gap-4'>
-            <div className='flex-1'>
-              <p className='ios-caption font-medium mb-2 uppercase tracking-wider'>Category</p>
+        <div className='glass-heavy p-6 shadow-ios-lg border border-white/10 rounded-[24px]'>
+          <div className='grid grid-cols-1 sm:grid-cols-3 gap-5'>
+            <div>
+              <p className='text-[13px] font-bold text-ios-text-tertiary mb-3 uppercase tracking-widest'>Category</p>
               <select onChange={(e) => setCategory(e.target.value)} className='ios-select w-full'>
                 <option value="Men">Men</option>
                 <option value="Women">Women</option>
                 <option value="Kids">Kids</option>
               </select>
             </div>
-            <div className='flex-1'>
-              <p className='ios-caption font-medium mb-2 uppercase tracking-wider'>Sub Category</p>
+            <div>
+              <p className='text-[13px] font-bold text-ios-text-tertiary mb-3 uppercase tracking-widest'>Sub Category</p>
               <select onChange={(e) => setSubCategory(e.target.value)} className='ios-select w-full'>
                 <option value="Topwear">Topwear</option>
                 <option value="Bottomwear">Bottomwear</option>
                 <option value="Winterwear">Winterwear</option>
               </select>
             </div>
-            <div className='flex-1'>
-              <p className='ios-caption font-medium mb-2 uppercase tracking-wider'>Price</p>
-              <input onChange={(e) => setPrice(e.target.value)} value={price} className='ios-input' type="Number" placeholder='25' />
+            <div>
+              <p className='text-[13px] font-bold text-ios-text-tertiary mb-3 uppercase tracking-widest'>Price</p>
+              <div className="relative">
+                 <span className="absolute left-4 top-1/2 -translate-y-1/2 text-ios-text-tertiary font-medium text-[16px]">$</span>
+                 <input onChange={(e) => setPrice(e.target.value)} value={price} className='ios-input pl-8' type="Number" placeholder='120' />
+              </div>
             </div>
           </div>
         </div>
 
         {/* Sizes */}
-        <div className='ios-card-glass p-5'>
-          <p className='ios-caption font-medium mb-3 uppercase tracking-wider'>Sizes</p>
-          <div className='flex gap-2'>
+        <div className='glass-heavy p-6 shadow-ios-lg border border-white/10 rounded-[24px]'>
+          <p className='text-[13px] font-bold text-ios-text-tertiary mb-4 uppercase tracking-widest'>Available Sizes</p>
+          <div className='flex flex-wrap gap-3'>
             {['S', 'M', 'L', 'XL', 'XXL'].map((size) => (
               <button
                 key={size}
                 type="button"
                 onClick={() => setSizes(prev => prev.includes(size) ? prev.filter(item => item !== size) : [...prev, size])}
-                className={`min-w-[48px] h-[44px] px-4 rounded-ios-sm text-[14px] font-medium transition-all duration-200 ${sizes.includes(size) ? 'bg-ios-blue text-white shadow-ios-sm' : 'bg-ios-fill/70 backdrop-blur-sm text-ios-text-primary hover:bg-ios-fill'}`}
+                className={`min-w-[56px] h-[50px] px-4 rounded-xl text-[15px] font-bold transition-all duration-300 border ${sizes.includes(size) ? 'bg-ios-purple/20 text-white border-ios-purple/50 shadow-[0_0_15px_rgba(191,90,242,0.3)]' : 'bg-black/40 text-ios-text-secondary border-white/10 hover:bg-white/10 hover:border-white/20'}`}
               >
                 {size}
               </button>
@@ -143,14 +146,14 @@ const Add = ({ token }) => {
         </div>
 
         {/* Bestseller + Submit */}
-        <div className='flex items-center justify-between'>
-          <label className='flex items-center gap-3 cursor-pointer'>
+        <div className='flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 mt-2'>
+          <label className='flex items-center gap-3 cursor-pointer group p-4 glass-heavy rounded-[16px] border border-white/10 hover:border-white/20 transition-all w-full sm:w-auto'>
             <input onChange={() => setBestseller(prev => !prev)} checked={bestseller} type="checkbox" className='ios-checkbox' />
-            <span className='text-[15px] text-ios-text-secondary font-medium'>Add to bestseller</span>
+            <span className='text-[15px] text-white font-medium group-hover:text-ios-blue transition-colors'>Mark as Bestseller</span>
           </label>
 
-          <button type="submit" className='ios-btn-primary px-10'>
-            Add Item
+          <button type="submit" className='ios-btn-primary w-full sm:w-auto px-12 py-4 rounded-[16px] shadow-ios-lg text-[16px]'>
+            Publish Product
           </button>
         </div>
 

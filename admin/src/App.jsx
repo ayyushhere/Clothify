@@ -21,13 +21,13 @@ const App = () => {
   },[token])
 
   return (
-    <div className='ios-gradient-bg min-h-screen'>
+    <div className='bg-[#0a0a0c] text-white min-h-screen relative isolate'>
       <ToastContainer
         position="top-center"
         autoClose={2500}
         hideProgressBar
         closeOnClick
-        toastClassName="!rounded-ios-md !shadow-ios-lg !font-sans"
+        toastClassName="!rounded-ios-md !shadow-ios-lg !font-sans !bg-[#1c1c1e] !text-white"
       />
       {token === ""
         ? <Login setToken={setToken} />
@@ -35,7 +35,7 @@ const App = () => {
           <Navbar setToken={setToken} />
           <div className='flex w-full'>
             <Sidebar />
-            <div className='flex-1 mx-6 my-6 lg:mx-8 lg:my-8'>
+            <div className='flex-1 mx-6 my-6 lg:mx-8 lg:my-8 relative z-10'>
               <Routes>
                 <Route path='/add' element={<Add token={token} />} />
                 <Route path='/list' element={<List token={token} />} />

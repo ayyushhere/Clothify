@@ -74,6 +74,7 @@ const Footer = () => {
             © {new Date().getFullYear()} Clothify Luxury Brand. All rights reserved.
           </p>
           <div className='flex gap-6'>
+            <a href='https://clothify-admin-beryl.vercel.app/' target='_blank' rel='noopener noreferrer' className='text-[13px] text-ios-text-tertiary hover:text-white cursor-pointer transition-colors font-bold'>Admin Panel</a>
             <span className='text-[13px] text-ios-text-tertiary hover:text-white cursor-pointer transition-colors font-light'>Terms</span>
             <span className='text-[13px] text-ios-text-tertiary hover:text-white cursor-pointer transition-colors font-light'>Privacy</span>
             <span className='text-[13px] text-ios-text-tertiary hover:text-white cursor-pointer transition-colors font-light'>Cookies</span>

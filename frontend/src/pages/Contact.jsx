@@ -16,28 +16,28 @@ const Contact = () => {
 
       <div className='glass-heavy border border-white/10 rounded-[3rem] overflow-hidden mb-20 shadow-ios-xl relative isolate'>
         <div className='absolute -bottom-32 -right-32 w-80 h-80 bg-ios-blue/10 blur-[100px] rounded-full -z-10'></div>
-        
+
         <div className='flex flex-col md:flex-row'>
           <img className='w-full md:w-[50%] object-cover min-h-[400px]' src={assets.contact_img} alt="Contact Clothify" />
           <div className='flex flex-col justify-center gap-8 p-10 md:p-16 flex-1 bg-black/30'>
-            
+
             <div className='flex flex-col gap-2'>
               <p className='text-2xl font-black text-white tracking-tight mb-2'>Our Headquarters</p>
               <p className='text-[16px] text-ios-text-secondary leading-relaxed font-light'>
-                54709 Luxury Avenue<br />
-                Suite 350, Beverly Hills, CA
+                144401 Lovely Professional University<br />
+                Jalandhar, Punjab, India
               </p>
             </div>
-            
+
             <div className='w-12 h-[1px] bg-white/10'></div>
 
             <div className='flex flex-col gap-2'>
               <p className='text-[16px] text-ios-text-secondary leading-relaxed font-light'>
-                Tel: <span className='text-white font-medium'>+1 (310) 555-0132</span><br />
+                Tel: <span className='text-white font-medium'>+91 9876543210</span><br />
                 Email: <span className='text-white font-medium'>client@clothify.com</span>
               </p>
             </div>
-            
+
             <div className='w-12 h-[1px] bg-white/10'></div>
 
             <div className='flex flex-col gap-4 mt-2'>
@@ -47,7 +47,7 @@ const Contact = () => {
                 Explore Opportunities
               </button>
             </div>
-            
+
           </div>
         </div>
       </div>

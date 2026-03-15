@@ -231,4 +231,28 @@ const updateStatus = async (req,res) => {
     }
 }
 
-export {verifyRazorpay, verifyStripe ,placeOrder, placeOrderStripe, placeOrderRazorpay, allOrders, userOrders, updateStatus}
+// Cancel Order by User
+const cancelOrder = async (req,res) => {
+    try {
+        const { orderId, userId } = req.body;
+
+        const order = await orderModel.findById(orderId);
+        
+        if (!order || order.userId !== userId) {
+            return res.json({ success: false, message: 'Order not found or unauthorized' });
+        }
+
+        if (order.status === 'Shipped' || order.status === 'Out for delivery' || order.status === 'Delivered' || order.status === 'Cancelled') {
+             return res.json({ success: false, message: 'Order cannot be cancelled at this stage' });
+        }
+
+        await orderModel.findByIdAndUpdate(orderId, { status: "Cancelled" });
+        res.json({ success: true, message: "Order Cancelled" });
+
+    } catch (error) {
+        console.log(error);
+        res.json({ success: false, message: error.message });
+    }
+}
+
+export {verifyRazorpay, verifyStripe ,placeOrder, placeOrderStripe, placeOrderRazorpay, allOrders, userOrders, updateStatus, cancelOrder}

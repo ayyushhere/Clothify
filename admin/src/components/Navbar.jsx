@@ -8,7 +8,12 @@ const Navbar = ({ setToken }) => {
           <div className='absolute inset-0 bg-gradient-to-r from-ios-blue/10 to-ios-purple/10 rounded-ios-full blur-md -z-10'></div>
           
           <div className='flex items-center gap-4'>
-             <h1 className='text-3xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-ios-blue to-ios-purple'>Clothify</h1>
+             <div className='flex items-center gap-3 group'>
+                <div className='w-9 h-9 rounded-full bg-gradient-to-tr from-ios-blue via-blue-500 to-ios-purple flex items-center justify-center shadow-ios-md group-hover:scale-110 transition-transform duration-300'>
+                    <span className='text-white font-black text-lg tracking-tighter'>C</span>
+                </div>
+                <h1 className='text-3xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-ios-blue to-ios-purple'>Clothify</h1>
+             </div>
              <span className='px-3 py-1 rounded-full bg-white/10 text-white text-xs font-semibold tracking-wide uppercase border border-white/5'>Admin</span>
           </div>
 

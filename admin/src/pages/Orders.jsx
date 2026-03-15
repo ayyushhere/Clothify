@@ -120,6 +120,7 @@ const Orders = ({ token }) => {
                      <option value="Shipped" className='bg-black text-white'>Shipped</option>
                      <option value="Out for delivery" className='bg-black text-white'>Out for delivery</option>
                      <option value="Delivered" className='bg-black text-ios-green'>Delivered</option>
+                     <option value="Cancelled" className='bg-black text-red-500'>Cancelled</option>
                    </select>
                 </div>
 

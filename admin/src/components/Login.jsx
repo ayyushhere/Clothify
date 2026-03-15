@@ -33,6 +33,11 @@ const Login = ({ setToken }) => {
             <div className='glass-heavy p-10 sm:p-14 rounded-[3rem] w-[90%] max-w-lg border border-white/10 shadow-ios-xl relative overflow-hidden animate-scale-in'>
                 
                 <div className='mb-10 text-center relative z-10'>
+                    <div className='flex items-center justify-center gap-3 mb-5'>
+                        <div className='w-12 h-12 rounded-full bg-gradient-to-tr from-ios-blue via-blue-500 to-ios-purple flex items-center justify-center shadow-[0_0_20px_rgba(10,132,255,0.4)]'>
+                            <span className='text-white font-black text-2xl tracking-tighter'>C</span>
+                        </div>
+                    </div>
                     <h1 className='text-4xl sm:text-5xl font-black mb-2 tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-ios-blue to-ios-purple'>Clothify</h1>
                     <span className='px-4 py-1.5 rounded-full bg-white/10 text-white text-xs font-semibold tracking-wide uppercase border border-white/5'>Admin Portal</span>
                 </div>

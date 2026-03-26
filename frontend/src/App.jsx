@@ -17,10 +17,16 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Verify from './pages/Verify'
 import MyProfile from './pages/MyProfile'
+import LoadingScreen from './components/LoadingScreen'
+import { ShopContext } from './context/ShopContext'
+import { useContext } from 'react'
 
 const App = () => {
+  const { loading } = useContext(ShopContext)
+
   return (
     <div className='min-h-screen ios-gradient-bg'>
+      {loading && <LoadingScreen />}
       <ToastContainer
         position="top-center"
         autoClose={2500}

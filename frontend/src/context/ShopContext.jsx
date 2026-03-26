@@ -15,6 +15,7 @@ const ShopContextProvider = (props) => {
     const [cartItems, setCartItems] = useState({});
     const [products, setProducts] = useState([]);
     const [token, setToken] = useState('')
+    const [loading, setLoading] = useState(true)
     const navigate = useNavigate();
 
 
@@ -114,12 +115,19 @@ const ShopContextProvider = (props) => {
             const response = await axios.get(backendUrl + '/api/product/list')
             if (response.data.success) {
                 setProducts(response.data.products.reverse())
+                // Only stop loading if we actually get data
+                setLoading(false)
             } else {
                 toast.error(response.data.message)
             }
 
         } catch (error) {
             console.log(error)
+            // If it fails, we still stop loading after a while? 
+            // Better to let the user see the crash or error 
+            // But if it's just waking up, it might throw error first.
+            // Let's keep it simple: stop loading on success or error.
+            setLoading(false)
             toast.error(error.message)
         }
     }
@@ -173,7 +181,8 @@ const ShopContextProvider = (props) => {
         cartItems, addToCart, setCartItems,
         getCartCount, updateQuantity,
         getCartAmount, navigate, backendUrl,
-        setToken, token
+        setToken, token,
+        loading, setLoading
     }
 
     return (
